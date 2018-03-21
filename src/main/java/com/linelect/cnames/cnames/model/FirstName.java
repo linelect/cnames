@@ -1,6 +1,7 @@
 package com.linelect.cnames.cnames.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class FirstName {
@@ -9,9 +10,10 @@ public class FirstName {
     private long id;
 
     @Column(nullable = false)
+    @NotEmpty
     private String name;
 
-    @Column()
+    @Column(length = 1500)
     private String description;
 
     @OneToOne

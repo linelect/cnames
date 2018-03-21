@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Random;
+import java.util.Set;
 
 @RestController
 public class HelloRest {
@@ -23,9 +25,15 @@ public class HelloRest {
 
     @RequestMapping("/")
     public List<FirstName> home() {
+        Language language = new Language();
+        language.setName("UA" + Math.random());
+        languageService.save(language);
+
         FirstName firstName = new FirstName();
         firstName.setName("namename");
         firstName.setDescription("name entry desc");
+        firstName.setLanguage(language);
+
         firstNameService.save(firstName);
 
         return firstNameService.getAll();
@@ -39,7 +47,7 @@ public class HelloRest {
     @RequestMapping("/languages")
     public List<Language> languages() {
         Language language = new Language();
-        language.setName("UA");
+        language.setName("UA"  + Math.random());
         languageService.save(language);
 
         return languageService.getAll();
