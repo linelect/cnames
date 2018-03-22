@@ -1,7 +1,8 @@
-package com.linelect.cnames.cnames.service;
+package com.linelect.cnames.cnames.service.impl;
 
 import com.linelect.cnames.cnames.model.Language;
 import com.linelect.cnames.cnames.repository.LanguageRepository;
+import com.linelect.cnames.cnames.service.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

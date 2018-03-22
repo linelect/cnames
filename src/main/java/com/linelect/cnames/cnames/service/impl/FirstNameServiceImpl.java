@@ -1,7 +1,8 @@
-package com.linelect.cnames.cnames.service;
+package com.linelect.cnames.cnames.service.impl;
 
 import com.linelect.cnames.cnames.model.FirstName;
 import com.linelect.cnames.cnames.repository.FirstNameRepository;
+import com.linelect.cnames.cnames.service.FirstNameService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +18,6 @@ public class FirstNameServiceImpl implements FirstNameService {
     public FirstNameServiceImpl(FirstNameRepository firstNameRepository) {
         this.firstNameRepository = firstNameRepository;
     }
-
 
     @Override
     public FirstName save(FirstName firstName) {
