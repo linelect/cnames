@@ -43,4 +43,9 @@ public class FirstNameServiceImpl implements FirstNameService {
     public List<FirstName> getAll() {
         return firstNameRepository.findAll();
     }
+
+    @Override
+    public FirstName getByName(String name) {
+        return firstNameRepository.findByName(name);
+    }
 }

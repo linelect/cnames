@@ -8,12 +8,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface FirstNameRepository extends JpaRepository<FirstName, Long> {
-//    @Override
-//    <S extends FirstName> S saveAndFlush(S entity);
-//
-//    @Override
-//    List<FirstName> findAll();
-//
-//    @Override
-//    Page<FirstName> findAll(Pageable pageable);
+    FirstName findByName(String name);
 }
