@@ -35,9 +35,8 @@ public class User {
     @Email
     private String linkedEmail;
 
-    @ElementCollection
-    @CollectionTable(name = "user_names")
-    private Set<FirstName> preferedFirstNames;
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY)
+    private Set<LikeName> likes;
 
     public long getId() {
         return id;
