@@ -1,6 +1,7 @@
 package com.linelect.cnames.cnames.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 public class LikeName {
@@ -10,9 +11,11 @@ public class LikeName {
     private long id;
 
     @ManyToOne
+    @NotEmpty
     private User user;
 
     @ManyToOne
+    @NotEmpty
     private FirstName firstName;
 
     public long getId() {
