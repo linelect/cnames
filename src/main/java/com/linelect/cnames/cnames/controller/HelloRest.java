@@ -2,8 +2,6 @@ package com.linelect.cnames.cnames.controller;
 
 import com.linelect.cnames.cnames.model.FirstName;
 import com.linelect.cnames.cnames.model.Language;
-import com.linelect.cnames.cnames.repository.FirstNameRepository;
-import com.linelect.cnames.cnames.repository.LanguageRepository;
 import com.linelect.cnames.cnames.service.FirstNameService;
 import com.linelect.cnames.cnames.service.LanguageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,8 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
 
 @RestController
 public class HelloRest {

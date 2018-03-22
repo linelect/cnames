@@ -16,5 +16,5 @@ public interface FirstNameService {
     List<FirstName> getByIds(List<Long> ids);
     List<FirstName> getAll();
     FirstName getByName(String name);
-    Set<FirstName> getNamesIntersection(User user1, User user2);
+    Set<FirstName> getNamesIntersection(long user1Id, long user2Id);
 }

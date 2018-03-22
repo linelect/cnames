@@ -38,7 +38,7 @@ public class FirstNameServiceImpl implements FirstNameService {
 
     @Override
     public FirstName getById(long id) {
-        return firstNameRepository.getOne(id);
+        return firstNameRepository.findById(id).get();
     }
 
     @Override
@@ -57,12 +57,12 @@ public class FirstNameServiceImpl implements FirstNameService {
     }
 
     @Override
-    public Set<FirstName> getNamesIntersection(User user1, User user2) {
-        Set<FirstName> setOfFirstNamesUser1 = likeNameRepository.findAllByUser_Id(user1.getId())
+    public Set<FirstName> getNamesIntersection(long user1Id, long user2Id) {
+        Set<FirstName> setOfFirstNamesUser1 = likeNameRepository.findAllByUser_Id(user1Id)
                 .stream()
                 .map(LikeName::getFirstName)
                 .collect(Collectors.toSet());
-        Set<FirstName> setOfFirstNamesUser2 = likeNameRepository.findAllByUser_Id(user2.getId())
+        Set<FirstName> setOfFirstNamesUser2 = likeNameRepository.findAllByUser_Id(user2Id)
                 .stream()
                 .map(LikeName::getFirstName)
                 .collect(Collectors.toSet());
